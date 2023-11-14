@@ -1,8 +1,15 @@
-import * as yup from "yup";
+import * as yup from 'yup'
 
 export const SigninSchema = yup
   .object({
-    email: yup.string().email("Invalid email").required("Email is required"),
-    password: yup.string().required("Password is required"),
+    userName: yup
+      .string()
+      .required('userName is required')
+      .min(6, 'invalid userName'),
+
+    password: yup
+      .string()
+      .required('Password is required')
+      .min(6, 'invalid Password'),
   })
-  .required();
+  .required()
