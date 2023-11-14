@@ -20,18 +20,18 @@ export const SigninForm = (): JSX.Element => {
     register,
     formState: { errors, isValid, isDirty },
   } = useForm<SigninFormValuesType>({
-    defaultValues: { username: '', password: '' },
+    defaultValues: { userName: '', password: '' },
     resolver: yupResolver(SigninSchema),
     mode: 'onChange',
   })
 
   const handleFormSubmit: SubmitHandler<SigninFormValuesType> = async (
-    { username, password },
+    { userName, password },
     event
   ) => {
     // call API here
     event?.preventDefault()
-    const data = await evalApiPromise(loginUser(username, password))
+    const data = await evalApiPromise(loginUser(userName, password))
     if (data?.responseCode === statusTypes.OK) {
       void router.push(`/two-fa?token=${data?.data?.token}`)
     }
@@ -46,9 +46,9 @@ export const SigninForm = (): JSX.Element => {
         <div className='flex flex-wrap gap-2'>
           <div className='w-full sm:w-[49%]'>
             <InputField
-              fieldName='username'
+              fieldName='userName'
               register={register}
-              error={errors?.username?.message}
+              error={errors?.userName?.message}
             />
           </div>
           <div className='w-full sm:w-[49%]'>
