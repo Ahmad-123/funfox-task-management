@@ -2,11 +2,11 @@ import { requestUrl } from '@hooks'
 import { AxiosResponse } from 'axios'
 
 export const loginUser = async (
-  email: string,
+  userName: string,
   password: string
 ): Promise<AxiosResponse<unknown, any>> => {
   return await requestUrl.post('logIn', {
-    email,
+    userName,
     password,
   })
 }

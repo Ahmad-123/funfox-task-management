@@ -33,7 +33,7 @@ export const SigninForm = (): JSX.Element => {
     event?.preventDefault()
     const data = await evalApiPromise(loginUser(userName, password))
     if (data?.responseCode === statusTypes.OK) {
-      void router.push(`/two-fa?token=${data?.data?.token}`)
+      void router.push('/tasks')
     }
   }
 
@@ -47,6 +47,7 @@ export const SigninForm = (): JSX.Element => {
           <div className='w-full sm:w-[49%]'>
             <InputField
               fieldName='userName'
+              placeHolder='Enter UserName'
               register={register}
               error={errors?.userName?.message}
             />
@@ -54,6 +55,7 @@ export const SigninForm = (): JSX.Element => {
           <div className='w-full sm:w-[49%]'>
             <InputField
               fieldName='password'
+              placeHolder='Enter Password'
               register={register}
               error={errors?.password?.message}
             />

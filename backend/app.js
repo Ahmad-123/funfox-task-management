@@ -91,14 +91,16 @@ app.get('/tasks', (req, res) => {
 
 // GET - Retrieve tasks against the user group
 app.get('/tasks/:group', (req, res) => {
-  const itemId = parseInt(req.params.group)
-  const item = tasks.find((item) => item.group === itemId)
+  const itemId = req.params.group
+  const items = tasks.filter((item) => {
+    return item.group === itemId
+  })
 
-  if (!item) {
-    return res.status(404).json({ message: 'Task not found' })
+  if (!items) {
+    return res.status(404).json({ message: 'Task not found', itemId })
   }
 
-  res.json(item)
+  res.json({ data: items })
 })
 
 // POST - Create a new task
