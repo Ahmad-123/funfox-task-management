@@ -1,11 +1,8 @@
 export interface UserInfoType {
-  id?: string;
-  email: string;
-  role: string;
-  fullname?: string;
-  kyc?: string;
-  googleAuthStatus?: boolean;
-  googleAuthRegister?: boolean;
+  id: string;
+  userName: string;
+  name: string;
+  group: string;
 }
 export interface AuthSliceState {
   userInfo: UserInfoType | null;
