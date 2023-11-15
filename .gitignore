@@ -6,22 +6,22 @@
 /backend/node_modules
 /frontend/node_modules
 
-/.pnp
-.pnp.js
+/frontend/.pnp
+/frontend/.pnp.js
 
 # testing
-/coverage
+/frontend/coverage
 
 # next.js
-/.next/
-/out/
+/frontend/.next/
+/frontend/out/
 
 # production
-/build
+/frontend/build
 
 # misc
-.DS_Store
-*.pem
+/frontend/.DS_Store
+/frontend/*.pem
 
 # debug
 npm-debug.log*
@@ -30,13 +30,13 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
-*.env
-.env*
+/frontend/.env*.local
+/frontend/*.env
+/frontend/.env*
 
 # vercel
-.vercel
+/frontend/.vercel
 
 # typescript
-*.tsbuildinfo
-next-env.d.ts
+/frontend/*.tsbuildinfo
+/frontend/next-env.d.ts

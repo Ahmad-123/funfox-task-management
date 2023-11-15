@@ -3,28 +3,15 @@
  * Here the slice is initialized.
  */
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { AppSliceState } from "./app.types";
 
-export const appInitialState: AppSliceState = {
-  userDetailPageType: "",
-  eventStatusType: "",
-  eventName: "",
-  toggle2Fa: "",
-  wallets: [],
-};
+export const appInitialState: AppSliceState = {};
 
 const appSlice = createSlice({
   name: "app",
   initialState: appInitialState,
-  reducers: {
-    setUserDetailPageType(
-      state: AppSliceState,
-      { payload }: PayloadAction<{ userDetailPageType: string }>
-    ) {
-      state.userDetailPageType = payload?.userDetailPageType;
-    },
-  },
+  reducers: {},
 });
 
 export const appActions = appSlice.actions;
