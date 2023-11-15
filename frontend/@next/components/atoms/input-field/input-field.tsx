@@ -2,12 +2,14 @@ import React from "react";
 
 export const InputField = ({
   type = "text",
+  placeHolder,
   fieldName,
   readOnly,
   register,
   error,
 }: {
   type?: string;
+  placeHolder: string;
   fieldName: string;
   readOnly?: boolean;
   register: Function;
@@ -27,7 +29,7 @@ export const InputField = ({
         type={type}
         readOnly={readOnly}
         {...register(fieldName)}
-        placeholder={`Enter ${fieldName}`}
+        placeholder={placeHolder}
         className={`w-full ${
           readOnly ? "bg-gray-300" : "bg-white"
         } py-2 px-4 border-[1px] rounded-[6px] outline-none placeholder-gray-500 ${

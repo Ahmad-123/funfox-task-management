@@ -19,7 +19,7 @@ export const CustomButton = ({
         </div>
       ) : (
         <button
-          // disabled={disabled}
+          disabled={disabled}
           //   type={type ? ButtonTypes.SUBMIT : ButtonTypes.BUTTON}
           className={`flex items-center w-[10rem] h-[2.875rem] justify-center  text-white text-[0.875rem] ${
             disabled && "bg-[#877FA3]"
@@ -30,30 +30,5 @@ export const CustomButton = ({
         </button>
       )}
     </>
-    // <LoadingButton
-    //   loading={loading}
-    //   disabled={disabled}
-    //   type={type ? ButtonTypes.SUBMIT : ButtonTypes.BUTTON}
-    //   sx={{
-    //     backgroundColor: `${backgroundColor}`,
-    //     borderRadius: "0.625rem",
-    //     color: `${color}`,
-    //     border: "none",
-    //     fontSize: "0.875rem",
-    //     fontFamily: "Poppins",
-    //     fontWeight: 600,
-    //     width: "10.75rem",
-    //     height: "3rem",
-    //     opacity: disabled ? "0.25" : "1",
-    //     margin: { xl: 0, lg: 0, md: 0, sm: "1rem 0 0", xs: "1rem 0 0" },
-    //     "&:hover": {
-    //       backgroundColor: `${backgroundColor}`,
-    //     },
-    //     p: "0px 15px",
-    //   }}
-    //   onClick={onClick}
-    // >
-    //   {text}
-    // </LoadingButton>
   );
 };
