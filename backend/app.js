@@ -106,7 +106,7 @@ app.get('/tasks/:group', (req, res) => {
 // POST - Create a new task
 app.post('/tasks', (req, res) => {
   const newItem = {
-    id: tasks.at(-1) ? tasks.at(-1) : 1,
+    id: tasks.at(-1) ? tasks.at(-1)?.id : 1,
     title: req.body.title,
     description: req.body.description,
     group: req.body.group,
